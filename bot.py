@@ -255,7 +255,7 @@ def zad(message):
         markups.row(btn)
         bot.send_message(message.chat.id, f'Занятие 1 <b>«Введение в Анатомию»</b> \n <i>Дата онлайн-занятия:22.07.2023</i> \n <i>Время: 10:00 мск</i> \n https://youtube.com/live/3qandDxgKqM?feature=share', reply_markup=markup, parse_mode="html")
         bot.send_message(message.chat.id, 'Смотри, учи, запоминай!', reply_markup=markups)
-        bot.register_next_step_handler(message, zad)
+        bot.register_next_step_handler(message, hlp1)
     elif message.text == 'Занятие 2':
         markup = types.InlineKeyboardMarkup()
         markups = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -266,7 +266,7 @@ def zad(message):
         markups.row(btn)
         bot.send_message(message.chat.id, f'Занятие 2 <b>«Остеология.Миология.Синдесмология»</b> \n <i>Дата онлайн-занятия:24.07.2023</i> \n <i>Время: 10:00 мск</i> \n https://youtube.com/live/7mt3-eoxXvk?feature=share', reply_markup=markup, parse_mode="html")
         bot.send_message(message.chat.id, 'Смотри, учи, запоминай!', reply_markup=markups)
-        bot.register_next_step_handler(message, zad)
+        bot.register_next_step_handler(message, hlp1)
     elif message.text == 'Занятие 3':
         markup = types.InlineKeyboardMarkup()
         markups = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -277,7 +277,7 @@ def zad(message):
         markups.row(btn)
         bot.send_message(message.chat.id, f'Занятие 3 <b>«Спланхнология»</b> \n <i>Дата онлайн-занятия:26.07.2023</i> \n <i>Время: 10:00 мск</i> \n https://youtube.com/live/zprqxa0a2rs?feature=share', reply_markup=markup, parse_mode="html")
         bot.send_message(message.chat.id, 'Смотри, учи, запоминай!', reply_markup=markups)
-        bot.register_next_step_handler(message, zad)
+        bot.register_next_step_handler(message, hlp1)
     elif message.text == 'Занятие 4':
         markup = types.InlineKeyboardMarkup()
         markups = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -288,7 +288,7 @@ def zad(message):
         markups.row(btn)
         bot.send_message(message.chat.id, f'Занятие 4 <b>«Кровеносная и Дыхательная системы»</b> \n <i>Дата онлайн-занятия:29.07.2023</i> \n <i>Время: 10:00 мск</i> \n https://youtube.com/live/4JnZrUOSnWw?feature=share', reply_markup=markup, parse_mode="html")
         bot.send_message(message.chat.id, 'Смотри, учи, запоминай!', reply_markup=markups)
-        bot.register_next_step_handler(message, zad)
+        bot.register_next_step_handler(message, hlp1)
     elif message.text == 'Выбрать другой раздел':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Вводное занятие')
@@ -354,7 +354,7 @@ def hlp(message):
         bot.send_message(message.chat.id, 'Не совсем понял тебя... Давай попробуем ещё раз')
         bot.register_next_step_handler(message, hlp)
 
-def hlp(message):
+def hlp1(message):
     if message.text == 'Выбрать другое занятие':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Занятие 1')
@@ -377,10 +377,10 @@ def hlp(message):
         btn1 = types.InlineKeyboardButton('Ссылка на беседу', url='https://t.me/+Dd9o9PDg-vs5ZWEy')
         markup.row(btn1)
         bot.send_message(message.chat.id, 'Это  чат с твоим преподавателем и однокурсниками. Ко времени онлайн занятий тут будут приходить ссылки на них. А еще тут можно что-то обсудить, поделиться впечатлениями и новостями❤️', reply_markup=markup)
-        bot.register_next_step_handler(message, hlp)
+        bot.register_next_step_handler(message, hlp1)
     else:
         bot.send_message(message.chat.id, 'Не совсем понял тебя... Давай попробуем ещё раз')
-        bot.register_next_step_handler(message, hlp)
+        bot.register_next_step_handler(message, hlp1)
 
 
 @bot.callback_query_handler(func=lambda callback: True)
